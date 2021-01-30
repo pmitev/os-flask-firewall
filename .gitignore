@@ -9,4 +9,5 @@ _build/
 *.simg
 *.sif
 *.rule
+SNIC*
 
