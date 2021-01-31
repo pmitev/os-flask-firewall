@@ -3,6 +3,7 @@
 pinn.egg-info/
 venv/
 *.pyc
+*.swp
 *~
 _build/
 .ipynb_checkpoints/
@@ -10,4 +11,5 @@ _build/
 *.sif
 *.rule
 SNIC*
+ip_witelist.dat
 
