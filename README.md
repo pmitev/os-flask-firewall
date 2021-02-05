@@ -34,7 +34,8 @@ nova list-secgroup NONMEM3
 
 ## Example project structure
 
-```
+projects.json
+```python
 PROJECTS={'SNIC_2020_20-17': {'regions': ['east-1', 'C3SE'],
   'token': '97df913f-6789-4d74-8617-5afad9e5ccc6-42f359',
   'rules': ['Rstudio'], 
@@ -42,7 +43,8 @@ PROJECTS={'SNIC_2020_20-17': {'regions': ['east-1', 'C3SE'],
   }
 ```
 
-```
+projects.yaml
+``` yaml
 SNIC_2020_20-17:
   ports:
   - '8787'
