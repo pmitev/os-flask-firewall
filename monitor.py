@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json
+import json, yaml
 import os, time
 import subprocess
 import shlex
@@ -37,7 +37,7 @@ for iproject in PROJECTS.keys():
         print(">>>>> "+iproject+" Region:"+iregion+" Rule:"+rule+" "+"="*20)
 
         source_env(iproject,iregion)
-        cmd_txt= f'openstack security group rule list -f json {rule}' ; cmd=shlex.split(cmd_txt)
+        cmd_txt= f'openstack security group rule list --ingress -f json {rule}' ; cmd=shlex.split(cmd_txt)
         if verbose : print(cmd_txt)
         proc= subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, stderr = proc.communicate()
