@@ -4,7 +4,7 @@ from flask_ipban import IpBan
 import os, time 
 import subprocess
 import shlex
-import json
+import yaml
 
 ip_ban = IpBan()
 app = Flask(__name__)
@@ -92,13 +92,8 @@ def favicon():
 
 if __name__ == '__main__':
 
-#    PROJECTS={'SNIC_2020_20-57': {'regions': ['east-1', 'C3SE'],
-#      'token': '97df913f-6789-4d74-8617-5afad9e5ccc6',
-#      'rules': ['Rstudio'],
-#      'ports': ['8787'] }
-#      }
 
-    with open('projects.json','r') as f:
-        PROJECTS=json.load(f)
+    with open('projects.yaml','r') as f:     
+        PROJECTS=yaml.load(f, yaml.FullLoader)    
 
     app.run(host="0.0.0.0", port=5000, debug=True)
